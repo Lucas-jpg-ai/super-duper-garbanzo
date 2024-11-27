@@ -1,10 +1,11 @@
-// modelo/Financiamento.java
 package modelo;
 
-public class Financiamento {
-    private double valorImovel;
-    private int prazo;
-    private double taxaJuros;
+import java.io.Serializable;
+
+public class Financiamento implements Serializable {
+    private final double valorImovel;
+    private final int prazo;
+    private final double taxaJuros;
 
     public Financiamento(double valorImovel, int prazo, double taxaJuros) {
         this.valorImovel = valorImovel;
@@ -28,5 +29,11 @@ public class Financiamento {
         System.out.println("Valor do Imóvel: R$" + valorImovel);
         System.out.println("Prazo (meses): " + prazo);
         System.out.println("Taxa de Juros Anual: " + taxaJuros + "%");
+    }
+
+    // Método toString para salvar os dados em arquivo de texto
+    @Override
+    public String toString() {
+        return valorImovel + "," + prazo + "," + taxaJuros;
     }
 }

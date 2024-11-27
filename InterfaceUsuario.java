@@ -4,7 +4,7 @@ package util;
 import java.util.Scanner;
 
 public class InterfaceUsuario {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public double obterValorImovel() {
         double valor;
